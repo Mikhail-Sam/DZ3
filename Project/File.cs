@@ -67,20 +67,61 @@ class File
         // Задание 3
         Console.WriteLine("");
         Console.WriteLine("       Задание 3");
+        Console.Write("Введите роль: ");
+        string role = Console.ReadLine();
+
+        string drink;
+
+        switch (role.ToLower())
+        {
+            case "jabroni":          drink = "Patron Tequila";        break;
+            case "school counselor": drink = "Anything with Alcohol"; break;
+            case "programmer":       drink = "Hipster Craft Beer";    break;
+            case "bike gang member": drink = "Moonshine";             break;
+            case "politician":       drink = "Your tax dollars";      break;
+            case "rapper":           drink = "Cristal";               break;
+            default: // Всё остальное
+                drink = "Beer";
+                break;
+        }
+
+        Console.WriteLine($"Напиток: {drink}");
         
         
         
         // Задание 4
         Console.WriteLine("");
         Console.WriteLine("       Задание 4");
+        Console.WriteLine("Введите номер дня недели: ");
+        int dayNumber = int.Parse(Console.ReadLine());
+
+        // Проверка на диапозон
+        if (dayNumber >= 1 & dayNumber <= 7)
+        {
+            // Преобразуем число в значение enum
+            DayOfWeek day = (DayOfWeek)dayNumber;
+            Console.WriteLine("День недели: " + day);
         
         
         
         
         // Задание 5
-        Console.WriteLine("");
-        Console.WriteLine("       Задание 5");
-        
-        
+       Console.WriteLine("");
+       Console.WriteLine("       Задание 5");
+
+        string[] toys =
+        {
+            "Hello Kitty", "Unicorn", "Barbie doll", "Slime", "Hello Kitty", "Ball", "Barbie doll", "Teddy bear"
+        };
+
+        int dollCount = 0;
+        foreach (string toy in toys)
+            if (toy == "Hello Kitty" || toy == "Barbie doll")
+            {
+                dollCount++; // Увеличиваем счётчик
+            }
+
+           Console.WriteLine($"В сумке {dollCount} куклы.");
+        }
     }
 }
